@@ -1,7 +1,53 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        title= title
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        div#wrapper
+            nav.navbar.navbar-default#navigation
+                    div#topNavMobile.container-fluid
+                        button(type='button', data-toggle="collapse", data-target='#headerWrapper', aria-expanded='false').navbar-toggle.collapsed
+                            span.sr-only Toggle navigation
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                    div#headerWrapper.collapse.navbar-collapse
+                        div#topNav
+                            div#logo
+                                h1.logo
+                                    a(href='/') Ellen Sun
+                            nav#mainNavigation.main-nav
+                                ul
+                                    li.gallery-collection(active)
+                                        a(href='/') Portfolio
+                                    li.gallery-collection
+                                        a(href='/') Experience
+                            nav#secondaryNavigation.main-nav
+                                ul
+                                    li.page-collection
+                                        a(href='/') About
+                                    li.page-collection
+                                        a(href='/contact') Contact
+                                    li.page-collection
+                                        a(href='http://cestmonvoyage.wordpress.com', target='_blank') Blog
+                        div#headerBlocks.col-md-1
+                            div.row
+                                div.col-md-1.col-md-offset-1
+                        div#footerBlocks.social-links
+                            a.email(href='mailto:ms.esun@gmail.com', target='_blank')
+                                i.fa.fa-envelope-o(aria-hidden='true')
+                            a.linkedin(href='http://www.linkedin.com/in/msellensun', target='_blank')
+                                i.fa.fa-linkedin(aria-hidden='true')
+                            a.twitter(href='http://www.twitter.com/ms_ellerz', target='_blank')
+                                i.fa.fa-twitter(aria-hidden='true')
+                            a.github(href='http://www.github.com/sunsplat', target='_blank')
+                                i.fa.fa-github(aria-hidden='true')
+            div#pageWrapper
+                block content
+        script(src='https://code.jquery.com/jquery-3.1.1.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        script(src='https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js')
+        script(src='https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js')

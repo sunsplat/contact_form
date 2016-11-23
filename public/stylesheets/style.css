@@ -1,8 +1,185 @@
+/* force scrollbar */
+html { 
+  overflow-y: scroll; 
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Muli', sans-serif;
+  line-height: 1.6em;
+  text-transform: none;
+  letter-spacing: .02em;
+  font-size: 14px;
+  color: #666;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: #121212;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 500;
+  font-style: normal;
+  color: #ff6666;
+}
+
+.logo {
+  line-height: 1;
+  margin: 0;
+  display: block;
+  max-width: 180px;
+}
+
+#logo {
+  margin-bottom: 30px;
+  padding: 50px 20px;
+  border-style: double;
+  border-color: #666;
+  text-align: center;
+}
+
+#topNav {
+  margin-bottom: 20px;
+}
+
+.main-nav {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.main-nav a {
+  display: block;
+  letter-spacing: 0em;
+  text-transform: none;
+  padding: .2em;
+  padding-left: 20px;
+  color: #666;
+  text-decoration: none;
+}
+
+nav {
+  /*display inline will make mobile nav bar small square in top left corner */
+  display: block;
+}
+
+nav.navbar-default {
+  display: inline-block;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  background-color: #fff;
+  height: 100vh;
+  width: auto;
+  padding: 50px 20px;
+}
+
+nav ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+#pageWrapper {
+  margin-left: 300px;
+  margin-top: 30px;
+}
+
+#secondaryNavigation.main-nav {
+  font-size: 13px;  
+}
+
+.social-links a {
+  margin: 0 10px 10px 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  color: #666;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 31%;
+}
+
+.grid-item {
+  float: right;
+  margin-bottom: 10px;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-item img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+a:hover {
+  color: #000000;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  .grid-sizer,
+  .grid-item {
+    width: 40%;
+  }
+
+
+  #logo {
+    font-size: 13px;
+  }
+
+}
+
+@media only screen and (max-width : 399px),
+only screen and (max-device-width : 480px){
+  #wrapper {
+    padding: 10px;
+  }
+
+  nav.navbar-default {
+    width: 100%;
+    height: auto;
+    z-index: 99;
+    position:relative;
+    padding: 0;
+  }
+
+  #logo {
+    display: none;
+  }
+
+  #mainNavigation {
+    padding-top: 30px;
+  }
+
+  ul li {
+    text-align: center;
+    padding: 3px;
+    font-size: 1em;
+  }
+
+  #pageWrapper {
+    height: 100%;
+  }
+
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+  }
+
+  .grid-item img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
 }

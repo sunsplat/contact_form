@@ -10,6 +10,10 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact Me!' });
 });
 
+router.get('/submit_success', function(req, res, next) {
+  res.render('submit_success', { title: 'Submitted' });
+});
+
 router.get('/admin_contact', function(req, res) {
   var db = req.db;
   var collection = db.get('messagecollection');
@@ -46,9 +50,12 @@ router.get('/add_message', function(req, res) {
       res.send("There was a problem adding the information to the database.");
     } else {
       // And forward to success page
-      res.redirect("submit_success");
+      //res.redirect("submit_success");
+      alert('Your message has been submitted!');
+      res.redirect('contact');
     }
   });
 });
+
 
 module.exports = router;
