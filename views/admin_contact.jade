@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1.
+    Messages
+  ul
+    each message, i in messages
+      li
+        a(href="mailto:#{message.email}"} = message.first_name)
