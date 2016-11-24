@@ -14,18 +14,8 @@ router.get('/submit_success', function(req, res, next) {
   res.render('submit_success', { title: 'Submitted' });
 });
 
-router.get('/admin_contact', function(req, res) {
-  var db = req.db;
-  var collection = db.get('messagecollection');
-  collection.find({},{},function(e,docs){
-    res.render('admin_contact', {    // this is referencing the jade template
-        "messages" : docs            // this is applying the data to a variable named messages
-    });
-  });
-});
-
 /* POST */
-router.get('/add_message', function(req, res) {
+router.post('/add_message', function(req, res) {
   // Set our internal DB variable
   var db = req.db;
 
@@ -34,7 +24,6 @@ router.get('/add_message', function(req, res) {
   var lastName = req.body.last_name;
   var email = req.body.email;
   var message = req.body.message;
-
   // Set our collection
   var collection = db.get('messagecollection');
 
@@ -50,8 +39,6 @@ router.get('/add_message', function(req, res) {
       res.send("There was a problem adding the information to the database.");
     } else {
       // And forward to success page
-      //res.redirect("submit_success");
-      alert('Your message has been submitted!');
       res.redirect('contact');
     }
   });

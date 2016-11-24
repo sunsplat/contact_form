@@ -1,9 +1,30 @@
 extends layout
 
 block content
-  h1.
-    Message
-  ul
-    each message, i in messages
-      li
-        a(href="mailto:#{message.email}")= message.first_name
+    h1= title
+    p All messages listed here.
+    #wrapper
+        #messageInfo
+        h2 Current Message:
+        p
+            strong First Name:
+            |  <span id='firstname'></span>
+            br
+            strong Last Name:
+            |  <span id='lastname'></span>
+            br
+            strong Email:
+            |  <span id='email'></span>
+            br
+            strong Message:
+            |  <span id='message'></span>
+      h2 Messages List
+      #messageList
+          table
+              thead
+                 th First Name
+                 th Last Name
+                 th Email
+                 th Message
+                 th Delete?
+              tbody

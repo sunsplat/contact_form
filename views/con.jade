@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1.
+      Message
+    ul
+      each message, i in messages
+        li
+          a(href="mailto:#{message.email}")= message.first_name
+    #messageList
+        table
+            thead
+                th Full Name
+                th Email
+                th Message
+                th Delete
+            tbody
